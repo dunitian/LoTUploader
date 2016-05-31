@@ -9,3 +9,28 @@ WebUploader基础上的封装改善，一句代码全部实现（样式美化，
 	如果你项目并不使用font-awesome，那请吧.upload-state-done:after样式修改一下，这样成功后就很明了
 
 	案例没有采用纯Net语法，只是把服务端处理用Net处理了下。index.html部分通用
+-----------------------------------------------------------------------------------------
+LoTUploader V1.0.1 	
+	LoTUploader修复上传失败的文件不能再上传bug
+	LoTUploader优化单文件上传的友好化处理
+	LoTUploader支持配置参数和方法回调等等
+
+----------------------------------------------------------------------------------------
+基本调用：$.lotuploader('lot-uploader', '/Home/Upload')
+调用实例：（单文件上传案例）
+		$.lotuploader({
+            lotDocId: 'lot-uploader',
+            lotUrl: '服务器Post地址',
+            oneFile: true,
+            fileSize: 1024 * 1024 * 5,
+            btnStr: '点我就上传默认展图',
+            lotSuccessFunc: function (file,data) {
+                //方法主体
+            },
+            lotErrorFunc: function (msg) {
+                $('#lot-uploader').append('<div class="lot-temp" style="color:red">' + msg + '</div> ');
+                setTimeout(function () {
+                    $('.lot-temp').remove();
+                }, 2000);
+            }
+        });
