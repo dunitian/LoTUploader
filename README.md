@@ -2,7 +2,8 @@
 
 WebUploader基础上的封装改善，一句代码全部实现（样式美化，实例JS优化（配置优化，样式调整，名称+大小显示，错误处理等），后端代码。。。。。）
 
-一句代码：$.lotuploader('lot-uploader', '/Home/Upload'); //必填参数：ID，Server地址 （完整案例看Demo部分）
+一句代码：//必填参数：ID，Server地址 （完整案例看Demo部分）
+$.lotuploader({lotDocId: 'lot-uploader',lotUrl: '/Home/Upload'});
 
 注意点：
 
@@ -16,7 +17,8 @@ WebUploader基础上的封装改善，一句代码全部实现（样式美化，
 	#LoTUploader支持配置参数和方法回调等等
 
 ----------------------------------------------------------------------------------------
-#基本调用：$.lotuploader('lot-uploader', '/Home/Upload')
+#基本调用：
+	$.lotuploader({lotDocId: 'lot-uploader',lotUrl: '/Home/Upload'});
 #调用实例：（单文件上传案例）
 	$.lotuploader({
             lotDocId: 'lot-uploader',
